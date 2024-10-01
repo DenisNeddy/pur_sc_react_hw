@@ -1,16 +1,20 @@
 
 import './App.css';
-import Button from './components/Button/Button.jsx';
-import Paragraph from './components/Paragraph/Paragraph.jsx';
-import Title from './components/Title/Title.jsx';
+import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
+
+import Search from './components/Search/Search.jsx';
+import Header from './Header/Header.jsx';
 
 function App() {
-
+	
 	return (
-		<>
-		     <Title >Тут Должна быть ваша  реклама</Title>
-			<Button >Купить</Button>
-			<Paragraph>Сколько бы вы не бегали от нас , вам все равно придется у нас это купить. Лучше сделать это сейчас, чтобы потом не пришлось уговаривать нас продать ЭТО вам</Paragraph>
+		<>   <Header />
+			<div className="container app__layout">
+				
+				<Search />
+				<LoginProfile />
+		
+			</div>
 		</>
 	);
 }
