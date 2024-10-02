@@ -1,8 +1,9 @@
 
 import './App.css';
-import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
+import CardList from './components/CardsList/CardsList.jsx';
+// import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
 
-import Search from './components/Search/Search.jsx';
+// import Search from './components/Search/Search.jsx';
 import Header from './Header/Header.jsx';
 
 function App() {
@@ -11,8 +12,9 @@ function App() {
 		<>   <Header />
 			<div className="container app__layout">
 				
-				<Search />
-				<LoginProfile />
+				{/* <Search />
+				<LoginProfile /> */}
+				<CardList />
 		
 			</div>
 		</>
