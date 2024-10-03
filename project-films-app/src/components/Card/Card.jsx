@@ -1,18 +1,15 @@
 import RatingTag from '../RatingTag/RatingTag.jsx';
 import FavoriteLink from '../FavoriteLink/FavoriteLink.jsx';
-// import { useState } from 'react';
 import './Card.css';
 
 const Card = ({ img, title, rating, onClick, favorite}) => {
 
 	const style = {
 		backgroundImage: `url(${img})`,
-		backgroundReapet: 'no-repeat',
+		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
-		backgroundSize: 'cover'
+		backgroundSize: '98% auto'
 	};
-
-	// const [, setFavorite] = useState(favorite);
 
 	return (
 		<div className="card" style={style}>
@@ -24,8 +21,6 @@ const Card = ({ img, title, rating, onClick, favorite}) => {
 				<div className="card__rating">
 					<RatingTag rating={rating} />
 				</div>
-				{/* <div>В избранное</div> */}
-				{/* <button >В избранное </button> */}
 				<FavoriteLink  className="card__favorite" favorite={favorite} onClick={onClick} text="В избранное" />
 			</div>
 		</div>
