@@ -1,0 +1,57 @@
+.card {
+    position: relative;
+    width: 282px;
+    height: 520px;
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.card__content {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: start;
+padding: 8px 0;
+width: 100%;
+height: 100%;
+background-color: rgb(32, 40, 62, 0.8); 
+backdrop-filter: blur(14px);
+border-radius: 12px;
+overflow: hidden;
+
+}
+
+.card__image {
+    order: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 0;
+    height: 400px;
+}
+
+.card__title {
+    align-self: start;
+    order: 2;
+    margin: 0;
+    margin-left: 16px;
+    margin-top: 24px;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #EBEEF5;
+    letter-spacing: 0.02em;
+}
+
+.card__rating {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+.card__favorite {
+    order: 3;
+    align-self: start;
+    margin-left: 8px;
+    margin-top: 8px;
+    outline-style:none;
+}

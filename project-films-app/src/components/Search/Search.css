@@ -1,0 +1,12 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 588px;
+}
+
+.search__wrapper {
+    display: flex;
+    gap: 8px;
+ 
+}

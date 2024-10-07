@@ -1,0 +1,23 @@
+.favorite-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: transparent;
+    padding: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02rem;
+    color: #7B6EF6;
+    outline:none;
+}
+
+.favorite-link:focus {
+
+    outline:none;
+}
+
+.favorite-link__text--active {
+    color: #37D8A7;
+}

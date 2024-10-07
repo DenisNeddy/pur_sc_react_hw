@@ -1,18 +1,20 @@
-// import { useState } from 'react';
 
-// import viteLogo from '/vite.svg';
 import './App.css';
-import Header from './components/Header/Header';
+import CardList from './components/CardsList/CardsList.jsx';
+// import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
 
+import Search from './components/Search/Search.jsx';
+import Header from './Header/Header.jsx';
 
 function App() {
-
-
+	
 	return (
-		<>
-			<Header />
+		<>   <Header />
+			<div className="container app__layout">
+				<Search />
+				<CardList />
+			</div>
 		</>
-
 	);
 }
 
