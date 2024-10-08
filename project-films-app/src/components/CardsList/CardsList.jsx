@@ -72,7 +72,7 @@ const CardsList = () => {
 		newData.find(el => el.id === id).favorite = !newData.find(el => el.id === id).favorite;		
 		setData(newData);	
 	};
-	console.log(data, 'Пизда!');
+
 	return (
 		<>
 			<div className={styles['cards-list']}>
