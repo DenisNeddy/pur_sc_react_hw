@@ -1,5 +1,5 @@
 
-import './App.css';
+import styles from './App.module.css';
 import CardList from './components/CardsList/CardsList.jsx';
 // import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
 
@@ -9,8 +9,9 @@ import Header from './Header/Header.jsx';
 function App() {
 	
 	return (
-		<>   <Header />
-			<div className="container app__layout">
+		<>   
+			<Header />
+			<div className={`container ${styles['app__layout']}`}>
 				<Search />
 				<CardList />
 			</div>

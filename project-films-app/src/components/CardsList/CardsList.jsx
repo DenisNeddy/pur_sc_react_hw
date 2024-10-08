@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import Card from '../Card/Card.jsx';
-import './CardsList.css';
+import styles from './CardsList.module.css';
 
 const INITIAL_DATA = [
 	{
@@ -75,7 +75,7 @@ const CardsList = () => {
 	console.log(data, 'Пизда!');
 	return (
 		<>
-			<div className="cards-list">
+			<div className={styles['cards-list']}>
 				{data.map(el => (
 					<Card 
 						key={el.id} 
