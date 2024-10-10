@@ -1,7 +1,7 @@
 // import NavLink from '../../NavLink/NavLink';
 
 import { useState, useEffect } from 'react';
-import NavLink from '../../NavLink/NavLink';
+import NavLink from '../NavLink/NavLink.jsx';
 import styles from './UserLogin.module.css';
 
 const UserLogin = ({user, Logout}) => {

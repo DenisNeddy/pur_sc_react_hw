@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import NavLink from '../NavLink/NavLink';
 import LinkCounter from '../LinkCounter/LinkCounter';
 import { useState, useEffect } from 'react';
-import UserLogin from '../components/UserLogin/UserLogin';
+import UserLogin from '../UserLogin/UserLogin.jsx';
 
 const Header = ({ userData, ResetLogin }) => {
 	const [user, setUser] = useState([]);
