@@ -2,7 +2,7 @@ import RatingTag from '../RatingTag/RatingTag.jsx';
 import FavoriteLink from '../FavoriteLink/FavoriteLink.jsx';
 import styles from './Card.module.css';
 
-const Card = ({ img, title, rating, onClick, favorite}) => {
+const Card = ({ img, title, rating, onClick, favorite }) => {
 
 	const style = {
 		backgroundImage: `url(${img})`,

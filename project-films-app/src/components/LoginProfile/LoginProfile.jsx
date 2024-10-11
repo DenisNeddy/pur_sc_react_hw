@@ -4,10 +4,8 @@ import Title from '../Title/Title.jsx';
 import styles from './LoginProfile.module.css';
 import { useState } from 'react';
 
-
 const LoginProfile = ({onSubmit}) => {
 	let [userName, setUserName] = useState('');
-
 
 	const onChange = (e) => {
 		setUserName(e.target.value);

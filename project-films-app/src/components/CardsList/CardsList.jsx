@@ -66,6 +66,7 @@ const INITIAL_DATA = [
 
 const CardsList = () => {
 	let [data, setData] = useState(INITIAL_DATA);
+	
 
 	const toggleFavorite = (id) => {
 		const newData = [...data];
@@ -74,7 +75,8 @@ const CardsList = () => {
 	};
 
 	return (
-		<>
+		<>  
+			<div style={{color: 'white'}}></div>
 			<div className={styles['cards-list']}>
 				{data.map(el => (
 					<Card 
