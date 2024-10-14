@@ -16,7 +16,6 @@ const LoginProfile = ({onSubmit}) => {
 		onSubmit(userName);
 		setUserName('');	
 	};
-	console.log(userName);
 	
 	return (
 		<div  className={styles['login-profile']}>
