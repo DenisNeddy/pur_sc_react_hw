@@ -20,7 +20,7 @@ function App() {
 		if(res.length > 0) {
 			setUsersState(res);		
 		}
-	}, []);
+	}, [setUsersState]);
     
 	useEffect(() => {
 		localStorage.setItem('data', JSON.stringify(usersState));	
@@ -30,10 +30,12 @@ function App() {
 		localStorage.setItem('data', JSON.stringify(''));
 		setUsersState([]);
 	};
+
+	console.log(usersState);
 	
 	return (
 		<>   
-			 <Header userData={usersState} ResetLogin={DeleteLogin} /> 
+			 <Header ResetLogin={DeleteLogin} /> 
 			<div className={`container ${styles['app__layout']}`}>
 				 { usersState.length === 0 && <LoginProfile onSubmit={getUser} /> } 
 				<Search />

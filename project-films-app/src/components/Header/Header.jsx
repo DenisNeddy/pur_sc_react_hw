@@ -6,12 +6,12 @@ import { useEffect, useContext } from 'react';
 import UserLogin from '../UserLogin/UserLogin.jsx';
 import { UserContext } from '../../context/user.context.jsx';
 
-const Header = ({ userData, ResetLogin }) => {
+const Header = ({ResetLogin }) => {
 	const {usersState, setUsersState} = useContext(UserContext);
 	
 	useEffect(() => {
-		setUsersState(userData);	
-	}, [userData, setUsersState]);
+		setUsersState(usersState);	
+	}, [usersState, setUsersState]);
 
 	return (
 		<section className={styles['header']}>
