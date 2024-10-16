@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './FavoriteLink.css';
+import styles from './FavoriteLink.module.css';
 
 const FavoriteLink = ({className, onClick, favorite,  ...props}) => {
 	const [fav, setFav] = useState(favorite);
@@ -10,9 +10,9 @@ const FavoriteLink = ({className, onClick, favorite,  ...props}) => {
 	};
 
 	return (
-		<button className={className ? className + ' favorite-link' : className} onClick={changeFavorite} {...props}>
+		<button className={className ? className + ` ${styles['favorite-link']}` : className} onClick={changeFavorite} {...props}>
 			{fav ? <img src="bookmark.svg"/> : <img src="like.svg"/>}
-			{fav ? <span className="favorite-link__text favorite-link__text--active">В избраном</span> : <span className="favorite-link__text">В избранное</span>}
+			{fav ? <span className={styles['favorite-link__text', 'favorite-link__text--active']}>В избраном</span> : <span className={styles['favorite-link__text']}>В избранное</span>}
 		</button>
 	);
 };

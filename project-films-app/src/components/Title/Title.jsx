@@ -1,8 +1,8 @@
-import './Title.css';
+import styles from './Title.module.css';
 
 const Title = ({children}) => {
 	return (
-		<h1 className="page__title">
+		<h1 className={styles['page__title']}>
 			{children}
 		</h1>
 	);

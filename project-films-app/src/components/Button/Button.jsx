@@ -1,8 +1,8 @@
-import './Button.css';
+import styles from './Button.module.css';
 
 const Button = ({ text , className = '', ...props}) => {
 	return (
-		<button className={className ? 'button ' + className : 'button' } {...props}> {text} </button>
+		<button className={className ? `${styles.button} ` + className : `${styles.button}` } {...props}> {text} </button>
 	);
 };
 

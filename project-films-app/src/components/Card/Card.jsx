@@ -1,8 +1,8 @@
 import RatingTag from '../RatingTag/RatingTag.jsx';
 import FavoriteLink from '../FavoriteLink/FavoriteLink.jsx';
-import './Card.css';
+import styles from './Card.module.css';
 
-const Card = ({ img, title, rating, onClick, favorite}) => {
+const Card = ({ img, title, rating, onClick, favorite }) => {
 
 	const style = {
 		backgroundImage: `url(${img})`,
@@ -12,16 +12,16 @@ const Card = ({ img, title, rating, onClick, favorite}) => {
 	};
 
 	return (
-		<div className="card" style={style}>
-			<div className="card__content">
-				<h2 className="card__title">{title}</h2>
-				<div className="card__image">
+		<div className={styles.card} style={style}>
+			<div className={styles['card__content']}>
+				<h2 className={styles['card__title']}>{title}</h2>
+				<div className={styles['card__image']}>
 					<img src={img} alt={title} />
 				</div>
-				<div className="card__rating">
+				<div className={styles['card__rating']}>
 					<RatingTag rating={rating} />
 				</div>
-				<FavoriteLink  className="card__favorite" favorite={favorite} onClick={onClick} text="В избранное" />
+				<FavoriteLink  className={styles['card__favorite']} favorite={favorite} onClick={onClick} text="В избранное" />
 			</div>
 		</div>
 	);

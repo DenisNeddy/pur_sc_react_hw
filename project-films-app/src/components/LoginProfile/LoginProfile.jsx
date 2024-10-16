@@ -1,15 +1,29 @@
 import Button from '../Button/Button.jsx';
 import Input from '../Input/Input.jsx';
 import Title from '../Title/Title.jsx';
-import './LoginProfile.css';
+import styles from './LoginProfile.module.css';
+import { useState } from 'react';
 
+const LoginProfile = ({onSubmit}) => {
+	let [userName, setUserName] = useState('');
 
-const LoginProfile = () => {
+	const onChange = (e) => {
+		setUserName(e.target.value);
+	};
+
+	const addUser = (e) => {
+		e.preventDefault();
+		onSubmit(userName);
+		setUserName('');	
+	};
+	
 	return (
-		<div className="login-profile">
+		<div  className={styles['login-profile']}>
 			<Title>Вход</Title>
-			<Input placeholder="Ваше имя" />
-			<Button text="Войти в профиль"/>
+			<form  className={styles['login-profile__form']} onSubmit={addUser}>
+				<Input value={userName} onChange={onChange} placeholder="Ваше имя" />
+				<Button text="Войти в профиль"/>
+			</form>
 		</div>
 	);
 };
