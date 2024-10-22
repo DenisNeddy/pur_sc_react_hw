@@ -1,4 +1,4 @@
-import Button from '../Button/Button.jsx';
+import Button from '../Button/Button.tsx';
 import Input from '../Input/Input.jsx';
 import Title from '../Title/Title.jsx';
 import styles from './LoginProfile.module.css';

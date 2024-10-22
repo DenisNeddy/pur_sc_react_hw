@@ -1,4 +1,4 @@
-import Button from '../Button/Button';
+import Button from '../Button/Button.tsx';
 import Input from '../Input/Input';
 import Paragraph from '../Paragraph/Paragraph.jsx';
 import Title from '../Title/Title.jsx';
