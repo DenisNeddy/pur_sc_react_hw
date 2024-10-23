@@ -1,10 +1,11 @@
-import RatingTag from '../RatingTag/RatingTag.jsx';
-import FavoriteLink from '../FavoriteLink/FavoriteLink.jsx';
+import RatingTag from '../RatingTag/RatingTag.tsx';
+import FavoriteLink from '../FavoriteLink/FavoriteLink.tsx';
 import styles from './Card.module.css';
+import { CardProps, CardPropsStyle } from './Card.props.ts';
 
-const Card = ({ img, title, rating, onClick, favorite }) => {
+const Card = ({ img, title, rating, onClick, favorite }: CardProps) => {
 
-	const style = {
+	const style: CardPropsStyle = {
 		backgroundImage: `url(${img})`,
 		backgroundRepeat: 'no-repeat',
 		backgroundPosition: 'center',
@@ -21,7 +22,12 @@ const Card = ({ img, title, rating, onClick, favorite }) => {
 				<div className={styles['card__rating']}>
 					<RatingTag rating={rating} />
 				</div>
-				<FavoriteLink  className={styles['card__favorite']} favorite={favorite} onClick={onClick} text="В избранное" />
+				<FavoriteLink  
+					className={styles['card__favorite']} 
+					favorite={favorite} 
+					onClick={onClick} 
+					text="В избранное" 
+				/>
 			</div>
 		</div>
 	);

@@ -1,9 +1,9 @@
 // import NavLink from '../../NavLink/NavLink';
 
 import { useEffect, useContext } from 'react';
-import NavLink from '../NavLink/NavLink.jsx';
+import NavLink from '../NavLink/NavLink.js';
 import styles from './UserLogin.module.css';
-import { UserContext } from '../../context/user.context.jsx';
+import { UserContext } from '../../context/user.context.js';
 
 const UserLogin = ({user, Logout}) => {
 	// const [isLog, setIsLog] = useState([]);

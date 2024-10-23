@@ -1,11 +1,12 @@
 
-import styles from './App.module.css';
-import CardList from './components/CardsList/CardsList.jsx';
-import LoginProfile from './components/LoginProfile/LoginProfile.jsx';
+// import styles from './App.module.css';
+import CardList from './components/CardsList/CardsList.js';
+import LoginProfile from './components/LoginProfile/LoginProfile.tsx';
 import {useLayoutEffect, useEffect, useContext} from 'react';
-import Search from './components/Search/Search.jsx';
-import Header from './components/Header/Header.jsx';
-import { UserContext } from './context/user.context.jsx';
+import Search from './components/Search/Search.tsx';
+import Header from './components/Header/Header.js';
+import { UserContext } from './context/user.context.js';
+import cn from 'classnames';
 
 function App() {
 	const {usersState,setUsersState} = useContext(UserContext);
@@ -31,12 +32,10 @@ function App() {
 		setUsersState([]);
 	};
 
-	console.log(usersState);
-	
 	return (
 		<>   
 			 <Header ResetLogin={DeleteLogin} /> 
-			<div className={`container ${styles['app__layout']}`}>
+			<div className={cn('container', 'app__layout')}>
 				 { usersState.length === 0 && <LoginProfile onSubmit={getUser} /> } 
 				<Search />
 				<CardList />

@@ -1,9 +1,10 @@
 
 import { useState } from 'react';
-import Card from '../Card/Card.jsx';
+import Card from '../Card/Card.js';
 import styles from './CardsList.module.css';
+import { ListItem } from './CardsList.props.js';
 
-const INITIAL_DATA = [
+const INITIAL_DATA: ListItem[] = [
 	{
 		id: 1,
 		img: 'image_black_widow.png', 
@@ -65,13 +66,18 @@ const INITIAL_DATA = [
 ];
 
 const CardsList = () => {
-	let [data, setData] = useState(INITIAL_DATA);
+	const [data, setData] = useState<ListItem[]>(INITIAL_DATA);
 	
 
-	const toggleFavorite = (id) => {
-		const newData = [...data];
-		newData.find(el => el.id === id).favorite = !newData.find(el => el.id === id).favorite;		
-		setData(newData);	
+	const toggleFavorite = (id: number): void => {
+		// const newData: ListItem[] = [...data];
+		const newData: ListItem[] = INITIAL_DATA || [];
+		if(newData.find((el:ListItem) => el.id === id)?.favorite !== null) {
+			newData.find((el:ListItem) => el!.id === id)!.favorite = !newData.find((el:ListItem) => el?.id === id)?.favorite; // Вопрос по этой строчке, пришлось ставить ! Стобы ts пропустил
+		}
+		
+		setData(newData);
+
 	};
 
 	return (
@@ -80,6 +86,7 @@ const CardsList = () => {
 			<div className={styles['cards-list']}>
 				{data.map(el => (
 					<Card 
+						FavId={el.id}
 						key={el.id} 
 						title={el.title} 
 						rating={el.rating} 

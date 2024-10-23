@@ -1,12 +1,13 @@
 
 import styles from './Header.module.css';
-import NavLink from '../NavLink/NavLink';
-import LinkCounter from '../LinkCounter/LinkCounter';
+import NavLink from '../NavLink/NavLink.js';
+import LinkCounter from '../LinkCounter/LinkCounter.js';
 import { useEffect, useContext } from 'react';
-import UserLogin from '../UserLogin/UserLogin.jsx';
-import { UserContext } from '../../context/user.context.jsx';
+import UserLogin from '../UserLogin/UserLogin.js';
+import { UserContext } from '../../context/user.context.js';
+import { HeaderProps } from './Header.props.js';
 
-const Header = ({ResetLogin }) => {
+const Header = ({ResetLogin }: HeaderProps) => {
 	const {usersState, setUsersState} = useContext(UserContext);
 	
 	useEffect(() => {
