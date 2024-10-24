@@ -1,6 +1,7 @@
 import styles from './RatingTag.module.css';
+import { RatingTagProps } from './RatingTag.props';
 
-const RatingTag = ({rating}) => {
+const RatingTag = ({rating}: RatingTagProps) => {
 	return (
 		<div className={styles['rating-tag']}>
 			<div className={styles['rating-tag-wrapper']}>

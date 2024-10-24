@@ -1,17 +1,19 @@
 import Button from '../Button/Button.tsx';
-import Input from '../Input/Input.jsx';
-import Title from '../Title/Title.jsx';
+import Input from '../Input/Input.js';
+import Title from '../Title/Title.tsx';
+
 import styles from './LoginProfile.module.css';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
+import { LoginProfileProps } from './LoginProfile.props.ts';
 
-const LoginProfile = ({onSubmit}) => {
-	let [userName, setUserName] = useState('');
+const LoginProfile = ({onSubmit}: LoginProfileProps) => {
+	const [userName, setUserName] = useState<string>('');
 
-	const onChange = (e) => {
-		setUserName(e.target.value);
+	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		setUserName(e.target.value );
 	};
 
-	const addUser = (e) => {
+	const addUser = (e: FormEvent) => {
 		e.preventDefault();
 		onSubmit(userName);
 		setUserName('');	
@@ -22,7 +24,7 @@ const LoginProfile = ({onSubmit}) => {
 			<Title>Вход</Title>
 			<form  className={styles['login-profile__form']} onSubmit={addUser}>
 				<Input value={userName} onChange={onChange} placeholder="Ваше имя" />
-				<Button text="Войти в профиль"/>
+				<Button>Вход</Button>
 			</form>
 		</div>
 	);

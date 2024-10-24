@@ -9,16 +9,28 @@ export interface UserProps {
 	isLogined: boolean
 }
 
-export const UserContext = createContext({
-	
+export interface MyContextType {
+	usersState: UserProps[],
+	addItem: (item: UserProps) => void,
+	startList: (item: UserProps[]) => void
+}
 
-});
+export const UserContext = createContext<MyContextType | undefined>(undefined);
 
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
-	const [usersState,setUsersState] = useState<UserProps[]>();
+	const [usersState,setUsersState] = useState<UserProps[]>([]);
 
-	return <UserContext.Provider value={{usersState,setUsersState}}>
+	const addItem = (item: UserProps) => {
+		setUsersState((prevItems) => [...prevItems, item]);
+	};
+	const startList = (item: UserProps[]) => {
+		setUsersState(item);
+	};
+
+	return (<UserContext.Provider value={{usersState,addItem, startList}}>
 		{children}
-	      </UserContext.Provider>;
+	      </UserContext.Provider>);
 };
+
+

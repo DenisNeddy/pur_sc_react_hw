@@ -3,16 +3,30 @@ import styles from './Header.module.css';
 import NavLink from '../NavLink/NavLink.js';
 import LinkCounter from '../LinkCounter/LinkCounter.js';
 import { useEffect, useContext } from 'react';
-import UserLogin from '../UserLogin/UserLogin.js';
-import { UserContext } from '../../context/user.context.js';
+import UserLogin from '../UserLogin/UserLogin.tsx';
+import { UserContext } from '../../context/user.context';
 import { HeaderProps } from './Header.props.js';
+// import { MyContextType } from '../../context/user.context';
+
+// import { UserProps } from '../../context/UserContext.js';
 
 const Header = ({ResetLogin }: HeaderProps) => {
-	const {usersState, setUsersState} = useContext(UserContext);
+	const context = useContext(UserContext);
+
+	if (!context) {
+		throw new Error('MyComponent must be used within a MyProvider');
+	}
+
+
+	const { usersState, startList } = context;
+	
+
+
+
 	
 	useEffect(() => {
-		setUsersState(usersState);	
-	}, [usersState, setUsersState]);
+		startList(usersState);	
+	}, [usersState, startList]);
 
 	return (
 		<section className={styles['header']}>

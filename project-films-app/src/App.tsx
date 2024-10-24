@@ -5,23 +5,38 @@ import LoginProfile from './components/LoginProfile/LoginProfile.tsx';
 import {useLayoutEffect, useEffect, useContext} from 'react';
 import Search from './components/Search/Search.tsx';
 import Header from './components/Header/Header.js';
-import { UserContext } from './context/user.context.js';
+import { UserContext, UserProps } from './context/user.context.tsx';
 import cn from 'classnames';
 
+
 function App() {
-	const {usersState,setUsersState} = useContext(UserContext);
-	const getUser = (user) => {	
+	const context = useContext(UserContext);
+
+	if (!context) {
+		throw new Error('MyComponent must be used within a MyProvider');
+	}
+
+
+	const { usersState, addItem, startList } = context;
+
+	const getUser = (user: string) => {	
 		if(usersState.length === 0) {
-			setUsersState(oldValue => [...oldValue, {name: user, isLogined: true}]);
+			const userM: UserProps = {name: user, isLogined: true};
+
+			addItem(userM);
+			// setUsersState((oldValue: any) => [...oldValue, {name: user, isLogined: true}]);
 		}
 	};
 
 	useLayoutEffect(() => {
-		const res = JSON.parse(localStorage.getItem('data'));
-		if(res.length > 0) {
-			setUsersState(res);		
+		
+
+		const res: UserProps[]  = JSON.parse(localStorage.getItem('data') ?? '');
+		if(res.length > 0 ) {
+			startList(res);		
 		}
-	}, [setUsersState]);
+		
+	}, [startList]);
     
 	useEffect(() => {
 		localStorage.setItem('data', JSON.stringify(usersState));	
@@ -29,7 +44,7 @@ function App() {
 
 	const DeleteLogin = () => {
 		localStorage.setItem('data', JSON.stringify(''));
-		setUsersState([]);
+		startList([]);
 	};
 
 	return (
