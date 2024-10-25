@@ -7,20 +7,17 @@ import { UserContext } from '../../context/user.context.js';
 import { UserLoginProps } from './UserLogin.props.js';
 
 const UserLogin = ({user, Logout}:  UserLoginProps ) => {
-	// const [isLog, setIsLog] = useState([]);
-	// const {usersState, setUsersState} = useContext(UserContext);
 	const context = useContext(UserContext);
 
 	if (!context) {
 		throw new Error('MyComponent must be used within a MyProvider');
 	}
 
-
-	const { usersState, startList } = context;
+	const { usersState, changeList } = context;
 
 	useEffect(() => {
-		startList(usersState);
-	}, [usersState, startList]);
+		changeList(usersState);
+	}, [usersState, changeList]);
 
 	return (
 		<div className={styles['login-user']}>

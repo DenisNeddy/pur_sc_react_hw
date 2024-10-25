@@ -4,9 +4,9 @@ import Paragraph from '../Paragraph/Paragraph.js';
 import Title from '../Title/Title.js';
 import styles from './Search.module.css';
 
-
 const Search = () => {
 	const icon = '/icon_search.svg';
+
 	return (
 		<div className={styles['search']}>
 			<Title>Поиск</Title>

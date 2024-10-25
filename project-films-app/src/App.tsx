@@ -8,7 +8,6 @@ import Header from './components/Header/Header.js';
 import { UserContext, UserProps } from './context/user.context.tsx';
 import cn from 'classnames';
 
-
 function App() {
 	const context = useContext(UserContext);
 
@@ -16,27 +15,23 @@ function App() {
 		throw new Error('MyComponent must be used within a MyProvider');
 	}
 
-
-	const { usersState, addItem, startList } = context;
+	const { usersState, addItem, changeList } = context;
 
 	const getUser = (user: string) => {	
 		if(usersState.length === 0) {
-			const userM: UserProps = {name: user, isLogined: true};
-
-			addItem(userM);
-			// setUsersState((oldValue: any) => [...oldValue, {name: user, isLogined: true}]);
+			const userData: UserProps = {name: user, isLogined: true};
+			addItem(userData);
 		}
 	};
 
 	useLayoutEffect(() => {
 		
-
 		const res: UserProps[]  = JSON.parse(localStorage.getItem('data') ?? '');
 		if(res.length > 0 ) {
-			startList(res);		
+			changeList(res);		
 		}
 		
-	}, [startList]);
+	}, [changeList]);
     
 	useEffect(() => {
 		localStorage.setItem('data', JSON.stringify(usersState));	
@@ -44,7 +39,7 @@ function App() {
 
 	const DeleteLogin = () => {
 		localStorage.setItem('data', JSON.stringify(''));
-		startList([]);
+		changeList([]);
 	};
 
 	return (

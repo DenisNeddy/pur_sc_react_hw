@@ -67,17 +67,12 @@ const INITIAL_DATA: ListItem[] = [
 
 const CardsList = () => {
 	const [data, setData] = useState<ListItem[]>(INITIAL_DATA);
-	
-
 	const toggleFavorite = (id: number): void => {
-		// const newData: ListItem[] = [...data];
 		const newData: ListItem[] = INITIAL_DATA || [];
 		if(newData.find((el:ListItem) => el.id === id)?.favorite !== null) {
 			newData.find((el:ListItem) => el!.id === id)!.favorite = !newData.find((el:ListItem) => el?.id === id)?.favorite; // Вопрос по этой строчке, пришлось ставить ! Стобы ts пропустил
 		}
-		
 		setData(newData);
-
 	};
 
 	return (
@@ -85,8 +80,7 @@ const CardsList = () => {
 			<div style={{color: 'white'}}></div>
 			<div className={styles['cards-list']}>
 				{data.map(el => (
-					<Card 
-						FavId={el.id}
+					<Card 	
 						key={el.id} 
 						title={el.title} 
 						rating={el.rating} 

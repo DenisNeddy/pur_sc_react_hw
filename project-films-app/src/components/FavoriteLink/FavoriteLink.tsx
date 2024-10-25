@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './FavoriteLink.module.css';
-import { FavoriteLinkProps } from './FavoriteLing.props';
+import { FavoriteLinkProps } from './FavoriteLink.props';
 import cn from 'classnames';
 
 const FavoriteLink = ({ className, onClick, favorite,  ...props}: FavoriteLinkProps) => {

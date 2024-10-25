@@ -1,13 +1,10 @@
-
-
 export interface CardProps {
-    FavId: number,
+    id?: number,
     img: string,
     title: string,
     rating: number,
     favorite: boolean, 
     onClick: () => void
-    
 }
 
 export interface CardPropsStyle {

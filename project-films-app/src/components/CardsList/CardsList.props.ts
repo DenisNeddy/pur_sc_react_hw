@@ -3,9 +3,7 @@ export interface ListItem {
     img: string,
     title: string,
     rating: number,
-    favorite: boolean,
-   
-    
+    favorite: boolean,   
 }
 
 

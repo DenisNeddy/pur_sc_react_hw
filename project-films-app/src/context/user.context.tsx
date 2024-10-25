@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState} from 'react';
+import { createContext, ReactNode, useState } from 'react';
 
 export interface UserContextProviderProps {
 	children: ReactNode
@@ -12,11 +12,10 @@ export interface UserProps {
 export interface MyContextType {
 	usersState: UserProps[],
 	addItem: (item: UserProps) => void,
-	startList: (item: UserProps[]) => void
+	changeList: (item: UserProps[]) => void
 }
 
 export const UserContext = createContext<MyContextType | undefined>(undefined);
-
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
 	const [usersState,setUsersState] = useState<UserProps[]>([]);
@@ -24,13 +23,15 @@ export const UserContextProvider = ({children}: UserContextProviderProps) => {
 	const addItem = (item: UserProps) => {
 		setUsersState((prevItems) => [...prevItems, item]);
 	};
-	const startList = (item: UserProps[]) => {
+	const changeList = (item: UserProps[]) => {
 		setUsersState(item);
 	};
 
-	return (<UserContext.Provider value={{usersState,addItem, startList}}>
-		{children}
-	      </UserContext.Provider>);
+	return (
+		<UserContext.Provider value={{ usersState, addItem, changeList }}>
+			{children}
+	    </UserContext.Provider>
+		  );
 };
 
 

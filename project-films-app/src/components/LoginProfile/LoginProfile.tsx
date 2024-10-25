@@ -1,7 +1,6 @@
 import Button from '../Button/Button.tsx';
 import Input from '../Input/Input.js';
 import Title from '../Title/Title.tsx';
-
 import styles from './LoginProfile.module.css';
 import { FormEvent, useState } from 'react';
 import { LoginProfileProps } from './LoginProfile.props.ts';

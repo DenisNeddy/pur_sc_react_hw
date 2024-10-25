@@ -4,7 +4,6 @@ import App from './App.tsx';
 import './index.css';
 import { UserContextProvider } from './context/user.context.tsx';
 
-
 createRoot(document.getElementById('root')).render(
 	<StrictMode>
 		<UserContextProvider>
