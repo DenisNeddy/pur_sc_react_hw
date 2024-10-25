@@ -6,7 +6,8 @@ export interface UserContextProviderProps {
 
 export interface UserProps {
 	name: string,
-	isLogined: boolean
+	isLogined: boolean,
+	
 }
 
 export interface MyContextType {

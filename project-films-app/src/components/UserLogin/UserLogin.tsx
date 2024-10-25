@@ -1,7 +1,7 @@
 // import NavLink from '../../NavLink/NavLink';
 
 import { useEffect, useContext } from 'react';
-import NavLink from '../NavLink/NavLink.js';
+import NavLink from '../NavLink/NavigationLink.js';
 import styles from './UserLogin.module.css';
 import { UserContext } from '../../context/user.context.js';
 import { UserLoginProps } from './UserLogin.props.js';
@@ -12,6 +12,7 @@ const UserLogin = ({user, Logout}:  UserLoginProps ) => {
 	if (!context) {
 		throw new Error('MyComponent must be used within a MyProvider');
 	}
+
 
 	const { usersState, changeList } = context;
 

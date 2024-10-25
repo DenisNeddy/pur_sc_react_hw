@@ -1,12 +1,15 @@
 
-// import styles from './App.module.css';
-import CardList from './components/CardsList/CardsList.js';
-import LoginProfile from './components/LoginProfile/LoginProfile.tsx';
+// // import styles from './App.module.css';
+// import CardList from './components/CardsList/CardsList.js';
+// import LoginProfile from './components/LoginProfile/LoginProfile.tsx';
 import {useLayoutEffect, useEffect, useContext} from 'react';
-import Search from './components/Search/Search.tsx';
+// import Search from './components/Search/Search.tsx';
 import Header from './components/Header/Header.js';
 import { UserContext, UserProps } from './context/user.context.tsx';
-import cn from 'classnames';
+// import cn from 'classnames';
+
+
+
 
 function App() {
 	const context = useContext(UserContext);
@@ -15,14 +18,14 @@ function App() {
 		throw new Error('MyComponent must be used within a MyProvider');
 	}
 
-	const { usersState, addItem, changeList } = context;
+	const { usersState, changeList } = context;
 
-	const getUser = (user: string) => {	
-		if(usersState.length === 0) {
-			const userData: UserProps = {name: user, isLogined: true};
-			addItem(userData);
-		}
-	};
+	// const getUser = (user: string) => {	
+	// 	if(usersState.length === 0) {
+	// 		const userData: UserProps = {name: user, isLogined: true};
+	// 		addItem(userData);
+	// 	}
+	// };
 
 	useLayoutEffect(() => {
 		
@@ -37,19 +40,24 @@ function App() {
 		localStorage.setItem('data', JSON.stringify(usersState));	
 	}, [usersState]);
 
-	const DeleteLogin = () => {
-		localStorage.setItem('data', JSON.stringify(''));
-		changeList([]);
-	};
+	// const DeleteLogin = () => {
+	// 	localStorage.setItem('data', JSON.stringify(''));
+	// 	changeList([]);
+	// };
 
 	return (
 		<>   
-			 <Header ResetLogin={DeleteLogin} /> 
+			 {/* <Header ResetLogin={DeleteLogin} /> 
 			<div className={cn('container', 'app__layout')}>
 				 { usersState.length === 0 && <LoginProfile onSubmit={getUser} /> } 
 				<Search />
 				<CardList />
-			</div>
+			</div> */}
+			<Header />
+
+			<RouterProvider router={router} />
+
+			
 		</>
 	);
 }
