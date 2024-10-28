@@ -54,10 +54,7 @@ function App() {
 				<CardList />
 			</div> */}
 			<Header />
-
-			<RouterProvider router={router} />
-
-			
+		
 		</>
 	);
 }

@@ -12,6 +12,8 @@ import { Layout } from './layout/Layout/Layout.tsx';
 import Favorites from './components/pages/Favorites/Favorites.tsx';
 import Error from './components/pages/Error/Error.tsx'
 import Login from './components/pages/Login/Login.tsx'
+import Films from './components/pages/Films/Films.jsx';
+import Product from './components/pages/Product/Product.tsx'
 
 
 
@@ -21,12 +23,20 @@ const router = createBrowserRouter([
 		element: <Layout />,
 		children: [
 			{
+				path: '/',
+				element: <Films />
+			},
+			{
 				path: '/favorites',
 				element: <Favorites />
 			},
 			{
 				path: '/login',
 				element: <Login />
+			},
+			{
+				path: '/product/:id',
+				element: <Product />
 			}
 		]
 	},

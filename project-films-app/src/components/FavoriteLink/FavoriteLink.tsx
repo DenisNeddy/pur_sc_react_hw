@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import styles from './FavoriteLink.module.css';
 import { FavoriteLinkProps } from './FavoriteLink.props';
 import cn from 'classnames';
 
-const FavoriteLink = ({ className, onClick, favorite,  ...props}: FavoriteLinkProps) => {
+const FavoriteLink = ({ className, favorite,  ...props}: FavoriteLinkProps) => {
 	const [fav, setFav] = useState<boolean>(favorite);
 	
-	const changeFavorite = () =>  {
+	const changeFavorite = (e:MouseEvent) =>  {
+		e.stopPropagation();
 		setFav(fav => !fav);
-		onClick();
+		
 	};
 
 	return (
-		<button className={className ? className + ` ${styles['favorite-link']}` : className} onClick={changeFavorite} {...props}>
-			{fav ? <img src="bookmark.svg"/> : <img src="like.svg"/>}
-			{fav ? <span className={cn('favorite-link__text', 'favorite-link__text--active')}>В избраном</span> : <span className={styles['favorite-link__text']}>В избранное</span>}
+		<button className={cn(styles['favorite-link'], className)} onClick={changeFavorite} {...props}>
+			{fav ? <img src="/bookmark.svg"/> : <img src="/like.svg"/>}
+			{fav ? <span className={cn(styles['favorite-link__text'], styles['favorite-link__text--active'])}>В избраном</span> : <span className={styles['favorite-link__text']}>В избранное</span>}
 		</button>
 	);
 };

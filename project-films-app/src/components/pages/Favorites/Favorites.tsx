@@ -1,8 +1,10 @@
+import Search from '../../Search/Search.tsx';
+import styles from './Favorites.module.css';
 const Favorites = () => {
 	return (
-		<h1>
-           Избранное 
-		</h1>
+		<div className={styles['favorites-page']}>
+			<Search />
+		</div>
 	);
 };
 

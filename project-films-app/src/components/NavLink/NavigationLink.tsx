@@ -12,5 +12,3 @@ const NavigationLink = ({ path = '', children}: NavigationLinkProps) => {
 };
 
 export default NavigationLink;
-
-// className={className ? `${styles['nav__link']} ` + className : `${styles['nav__link']}`}

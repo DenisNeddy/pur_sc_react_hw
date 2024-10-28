@@ -4,7 +4,7 @@ export interface CardProps {
     title: string,
     rating: number,
     favorite: boolean, 
-    onClick: () => void
+    onClick?: () => void
 }
 
 export interface CardPropsStyle {

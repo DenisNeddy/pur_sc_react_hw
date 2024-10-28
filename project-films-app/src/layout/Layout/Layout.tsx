@@ -52,7 +52,9 @@ export const Layout = () => {
 				<Header />
 			</div>
 			<div>
-				<Outlet/>
+				<div className="container">
+					<Outlet/>
+				</div>
 			</div>
 		</>
 	);

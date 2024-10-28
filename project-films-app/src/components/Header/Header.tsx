@@ -6,6 +6,8 @@ import { useEffect, useContext } from 'react';
 import { UserContext } from '../../context/user.context';
 // import { HeaderProps } from './Header.props.js';
 
+import { NavLink } from 'react-router-dom';
+
 const Header = () => {
 	const context = useContext(UserContext);
 
@@ -24,7 +26,7 @@ const Header = () => {
 			<div className='container'>
 				<div className={styles['header__wrapper']}>
 					<div className={styles['header__logo']}>
-						<img src="./logo.svg" alt="Логотип FilmsApp"/>
+						<NavLink to="/"><img src="/logo.svg" alt="Логотип FilmsApp"/></NavLink>
 					</div>
 					<nav className={styles['header__nav']}>
 						<NavigationLink path='/'>Поиск фильмов</NavigationLink>

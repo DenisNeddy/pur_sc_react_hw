@@ -2,8 +2,9 @@ import RatingTag from '../RatingTag/RatingTag.tsx';
 import FavoriteLink from '../FavoriteLink/FavoriteLink.tsx';
 import styles from './Card.module.css';
 import { CardProps, CardPropsStyle } from './Card.props.ts';
+import { Link } from 'react-router-dom';
 
-const Card = ({ img, title, rating, onClick, favorite }: CardProps) => {
+const Card = ({ id, img, title, rating, favorite }: CardProps) => {
 
 	const style: CardPropsStyle = {
 		backgroundImage: `url(${img})`,
@@ -14,18 +15,22 @@ const Card = ({ img, title, rating, onClick, favorite }: CardProps) => {
 
 	return (
 		<div className={styles.card} style={style}>
-			<div className={styles['card__content']}>
-				<h2 className={styles['card__title']}>{title}</h2>
-				<div className={styles['card__image']}>
-					<img src={img} alt={title} />
-				</div>
-				<div className={styles['card__rating']}>
-					<RatingTag rating={rating} />
-				</div>
+			<div className={styles['card__wrap']}>
+
+				<Link to={`/product/${id}`}>
+					<div className={styles['card__content']}>
+						<h2 className={styles['card__title']}>{title}</h2>
+						<div className={styles['card__image']}>
+							<img src={img} alt={title} />
+						</div>
+						<div className={styles['card__rating']}>
+							<RatingTag rating={rating} />
+						</div>
+					</div>
+				</Link>
 				<FavoriteLink  
 					className={styles['card__favorite']} 
 					favorite={favorite} 
-					onClick={onClick} 
 					text="В избранное" 
 				/>
 			</div>
