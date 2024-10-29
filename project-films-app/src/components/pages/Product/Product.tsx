@@ -1,32 +1,16 @@
 
 import { useParams } from 'react-router-dom';
-import { UserContext } from '../../../context/user.context.tsx';
-import { useContext } from 'react';
 import styles from './Product.module.css';
 import RatingTag from '../../RatingTag/RatingTag.tsx';
 import FavoriteLink from '../../FavoriteLink/FavoriteLink.tsx';
-
-export interface ListItem {
-    id: number,
-    img: string,
-    title: string,
-    rating: number,
-    favorite: boolean,   
-}
+import { useUserContext } from '../../../helpers/userContext.tsx';
 
 const Product = () => {
 	const {id} = useParams();
-	const context = useContext(UserContext);
 
-	if (!context) {
-		throw new Error('MyComponent must be used within a MyProvider');
-	}
-	const {filmsState} = context;
+	const {filmsState} = useUserContext();
 	
 	const product = filmsState.find(el => el.id === Number(id));
-	
-	console.log(product, 'продукт');
-	console.log(typeof product?.favorite);
 
 	return (
 		<>

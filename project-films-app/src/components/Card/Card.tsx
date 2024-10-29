@@ -13,6 +13,7 @@ const Card = ({ id, img, title, rating, favorite }: CardProps) => {
 		backgroundSize: '98% auto'
 	};
 
+	console.log(favorite, 'card');
 	return (
 		<div className={styles.card} style={style}>
 			<div className={styles['card__wrap']}>

@@ -1,9 +1,12 @@
+import LoginProfile from '../../LoginProfile/LoginProfile';
+import styles from './Login.module.css';
+
+
 const Login = () => {
 	return (
-		<h1>
-            Страница Логина
-            
-		</h1>
+		<div className={styles['login-page']}>
+			<LoginProfile/>
+		</div>
 	);
 };
 

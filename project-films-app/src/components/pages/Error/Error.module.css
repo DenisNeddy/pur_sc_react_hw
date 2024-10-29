@@ -1,0 +1,25 @@
+.error-page {
+    margin-top: 80px;
+}
+
+.error-page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 640px;
+    padding-top: 104px;
+
+}
+
+.error-page__title {
+    font-weight: 700;
+    color: white;
+}
+
+.error-page__text {
+    width: 600px;
+   text-align: center;
+} 

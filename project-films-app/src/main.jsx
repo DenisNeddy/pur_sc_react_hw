@@ -37,13 +37,14 @@ const router = createBrowserRouter([
 			{
 				path: '/product/:id',
 				element: <Product />
+			},
+			{
+				path: '*',
+				element: <Error/>
 			}
 		]
 	},
-	{
-		path: '*',
-		element: <Error/>
-	}
+	
 
 	
 ]);

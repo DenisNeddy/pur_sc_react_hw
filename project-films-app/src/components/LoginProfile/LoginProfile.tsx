@@ -14,7 +14,9 @@ const LoginProfile = ({onSubmit}: LoginProfileProps) => {
 
 	const addUser = (e: FormEvent) => {
 		e.preventDefault();
-		onSubmit(userName);
+		if(onSubmit) {
+			onSubmit(userName);
+		}
 		setUserName('');	
 	};
 	
@@ -23,7 +25,7 @@ const LoginProfile = ({onSubmit}: LoginProfileProps) => {
 			<Title>Вход</Title>
 			<form  className={styles['login-profile__form']} onSubmit={addUser}>
 				<Input value={userName} onChange={onChange} placeholder="Ваше имя" />
-				<Button>Вход</Button>
+				<Button>Войти в профиль</Button>
 			</form>
 		</div>
 	);

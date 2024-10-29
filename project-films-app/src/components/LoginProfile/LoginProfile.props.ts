@@ -1,3 +1,3 @@
 export interface LoginProfileProps {
-    onSubmit: (user: string) => void
+    onSubmit?: (user: string) => void
 }
