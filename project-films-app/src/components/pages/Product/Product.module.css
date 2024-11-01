@@ -1,0 +1,155 @@
+.product {
+    padding: 50px 115px;
+}
+
+.product__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 8px;
+    padding: 40px;
+    background-color: rgb(32, 40, 62, 0.8);
+    border-radius: 24px;
+}
+
+.product__header-tag {
+    margin: 0;
+    font-size: 12px;
+    color: #BEB7FB;
+}
+
+.product__header-title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 150%;
+    color: #EBEEF5;
+    letter-spacing: 0.04em;
+}
+
+
+.product__content {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 80px;
+}
+
+.product__picture {
+    width: 100%;
+    height: 720px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.product__picture img{
+    width: auto;
+    height: 100%;
+
+} 
+
+.product__data {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.product__data-description {
+    margin: 0;
+    font-size: 20px;
+    line-height: 150%;
+    color: #8E95A9;
+}
+
+.product__rating-wrap {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 16px;
+}
+
+.product__data-table{
+    border-spacing: 0px;
+    border-collapse: collapse;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+    gap: 24px;
+  }
+.product__data-table-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+.product__data_table-header {
+    padding: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #767E94;
+}
+
+.product__data-table-text {
+    padding: 0;
+    font-size: 20px;
+    line-height: 32px;
+    color: #C3C8D4;
+}
+
+.reviews {
+    padding: 35px 115px;
+}
+
+.reviews__title {
+    font-size: 16px;
+    line-height: 24px;
+    color: #767E94;
+}
+
+.reviews__list {
+    margin-top: 14px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 40px;
+    background-color: rgba(32, 40, 62, 0.8);
+    border-radius: 24px;
+}
+
+.review__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review__title {
+    margin: 0;
+ font-size: 20px;
+ line-height: 32px;
+ font-weight: 900;
+ color: #C3C8D4;   
+}
+
+.review__date {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+    color: #767E94;
+}
+
+.review__text {
+    margin: 0;
+    font-size: 20px;
+    line-height: 32px;
+    color: #8E95A9;
+}

@@ -1,0 +1,6 @@
+.films-page {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 80px;
+}
