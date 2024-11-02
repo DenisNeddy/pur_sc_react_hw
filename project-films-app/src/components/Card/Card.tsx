@@ -4,7 +4,7 @@ import styles from './Card.module.css';
 import { CardProps, CardPropsStyle } from './Card.props.ts';
 import { Link } from 'react-router-dom';
 
-const Card = ({ id, img, title, rating, favorite }: CardProps) => {
+const Card = ({ id, img, title, rating }: CardProps) => {
 
 	const style: CardPropsStyle = {
 		backgroundImage: `url(${img})`,
@@ -13,7 +13,6 @@ const Card = ({ id, img, title, rating, favorite }: CardProps) => {
 		backgroundSize: '98% auto'
 	};
 
-	console.log(favorite, 'card');
 	return (
 		<div className={styles.card} style={style}>
 			<div className={styles['card__wrap']}>
@@ -31,7 +30,7 @@ const Card = ({ id, img, title, rating, favorite }: CardProps) => {
 				</Link>
 				<FavoriteLink  
 					className={styles['card__favorite']} 
-					favorite={favorite} 
+					 
 					text="В избранное" 
 				/>
 			</div>

@@ -1,9 +1,7 @@
-export interface ListItem {
-    id: number,
-    img: string,
-    title: string,
-    rating: number,
-    favorite: boolean,   
-}
+// import { ListItem } from '../../context/user.context';
+
+// export interface CardListProps {
+//     films: [] | {}
+// }
 
 

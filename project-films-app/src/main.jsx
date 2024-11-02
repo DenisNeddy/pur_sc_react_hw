@@ -12,7 +12,7 @@ import { Layout } from './layout/Layout/Layout.tsx';
 import Favorites from './components/pages/Favorites/Favorites.tsx';
 import Error from './components/pages/Error/Error.tsx'
 import Login from './components/pages/Login/Login.tsx'
-import Films from './components/pages/Films/Films.jsx';
+import Films from './components/pages/Films/Films.tsx';
 import Product from './components/pages/Product/Product.tsx'
 
 
@@ -24,7 +24,9 @@ const router = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Films />
+				element: <Films />,
+
+				
 			},
 			{
 				path: '/favorites',

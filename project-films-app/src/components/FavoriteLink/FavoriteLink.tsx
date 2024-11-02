@@ -1,14 +1,14 @@
-import { MouseEvent, useEffect, useState } from 'react';
+import { MouseEvent,  useState } from 'react';
 import styles from './FavoriteLink.module.css';
 import { FavoriteLinkProps } from './FavoriteLink.props';
 import cn from 'classnames';
 
-const FavoriteLink = ({ className, favorite,  ...props}: FavoriteLinkProps) => {
+const FavoriteLink = ({ className,   ...props}: FavoriteLinkProps) => {
 	const [fav, setFav] = useState<boolean>(false);
 	
-	useEffect(() => {
-		setFav(favorite);
-	}, [favorite]);
+	// useEffect(() => {
+	// 	setFav(favorite);
+	// }, [favorite]);
 
 	const changeFavorite = (e:MouseEvent) =>  {
 		e.stopPropagation();

@@ -1,22 +1,23 @@
 import Card from '../Card/Card.js';
 import styles from './CardsList.module.css';
-import { useUserContext } from '../../helpers/userContext.js';
+// import { useUserContext } from '../../helpers/userContext.js';
+import { ListItem } from '../../context/user.context.js';
+// import { CardListProps } from './CardsList.props.js';
 
-const CardsList = () => {
-	const { filmsState } = useUserContext();
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const CardsList = ( {films}: any) => {
+
 
 	return (
 		<>  
 			<div className={styles['cards-list']}>
-				{filmsState.map(el => (
+				{films.map((el: ListItem) => (
 					<Card 	
-						id={el.id}
-						key={el.id} 
-						title={el.title} 
-						rating={el.rating} 
-						img={el.img} 
-						favorite={el.favorite}
-						
+						id={el['#IMDB_ID']}
+						key={el['#IMDB_ID']} 
+						title={el['#TITLE']} 
+						rating={el['#RANK']} 
+						img={el['#IMG_POSTER']} 	
 					/>
 				))} 
 			</div>
