@@ -1,7 +1,6 @@
 
 import { createContext, ReactNode, useState } from 'react';
 
-
 export interface UserContextProviderProps {
 	children: ReactNode
 }
@@ -16,9 +15,6 @@ export interface ListItem {
 	'#IMG_POSTER': string,
 	'#TITLE': string,
 	'#RANK': number,
-
-
-	
 }
 
 const INITIAL_LIST: ListItem[] = [
@@ -49,10 +45,7 @@ const INITIAL_LIST: ListItem[] = [
 		'#IMG_POSTER': 'image_friends.png', 
 		'#TITLE': 'Friends',
 		'#RANK': 2135
-		
 	}
-	
-	
 ];
 
 export interface MyContextType {
@@ -61,12 +54,10 @@ export interface MyContextType {
 	changeList: (item: UserProps[]) => void,
 	filmsState: ListItem[],
 	changeFilms: (item: ListItem[] | ListItem ) => void
-
 }
 
 export interface ListContextType {
 	films: ListItem[],
-	
 }
 
 export const UserContext = createContext<MyContextType | undefined>(undefined);

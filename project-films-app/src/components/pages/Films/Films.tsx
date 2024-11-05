@@ -2,13 +2,14 @@ import Search from '../../Search/Search.tsx';
 import CardList from '../../CardsList/CardsList.tsx';
 import styles from './Films.module.css';
 import { useState } from 'react';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 import { useUserContext } from '../../../helpers/userContext.tsx';
+import Error from '../Error/Error.tsx';
 
 const Films = () => {
     	const { filmsState } = useUserContext();
-	const [films, setFilms] = useState({});
+	const [films, setFilms] = useState(filmsState);
 	// const [filter, setFilter] = useState<string>('');
 
 	// useEffect(() => {
@@ -16,13 +17,18 @@ const Films = () => {
 	// }, [filter]);
 
 	const getFilms = async (q: string) => {
-		const {data} = await axios.get(`https://search.imdbot.workers.dev/?q=${q}`);
-		setFilms(data);
+		try {
+
+			const {data} = await axios.get(`https://search.imdbot.workers.dev/?q=${q}`);
+			
+			setFilms(data.description);
+		} catch(e) {
+			if(e instanceof AxiosError) {
+				console.log(e.message);
+			}
+		}
 	};
-
-	console.log(films);
-	//ghb
-
+	
 	// const updateFilter = (e: FormEvent) => {
 	// 	setFilter(e.target.value);
 	// };
@@ -31,7 +37,7 @@ const Films = () => {
 	return (
 		<div className={styles['films-page']} >
 			<Search sFilms={getFilms} />
-			<CardList films={'description' in films ? films.description : filmsState} /> 
+			{films.length > 0 ? <CardList films={films} /> : <Error/> }
 		</div>     
 	);
 };

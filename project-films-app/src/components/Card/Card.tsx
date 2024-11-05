@@ -29,8 +29,7 @@ const Card = ({ id, img, title, rating }: CardProps) => {
 					</div>
 				</Link>
 				<FavoriteLink  
-					className={styles['card__favorite']} 
-					 
+					className={styles['card__favorite']} 					 
 					text="В избранное" 
 				/>
 			</div>

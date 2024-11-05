@@ -5,10 +5,6 @@ import cn from 'classnames';
 
 const FavoriteLink = ({ className,   ...props}: FavoriteLinkProps) => {
 	const [fav, setFav] = useState<boolean>(false);
-	
-	// useEffect(() => {
-	// 	setFav(favorite);
-	// }, [favorite]);
 
 	const changeFavorite = (e:MouseEvent) =>  {
 		e.stopPropagation();
