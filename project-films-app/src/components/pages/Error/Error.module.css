@@ -1,6 +1,3 @@
-.error-page {
-    margin-top: 80px;
-}
 
 .error-page__content {
     display: flex;
@@ -10,8 +7,6 @@
     gap: 20px;
     margin: 0 auto;
     max-width: 640px;
-    padding-top: 104px;
-
 }
 
 .error-page__title {

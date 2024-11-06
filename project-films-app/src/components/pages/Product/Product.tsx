@@ -1,20 +1,24 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useParams } from 'react-router-dom';
-import styles from './Product.module.css';
-import RatingTag from '../../RatingTag/RatingTag.tsx';
-import FavoriteLink from '../../FavoriteLink/FavoriteLink.tsx';
-import { useUserContext } from '../../../helpers/userContext.tsx';
+// import { useParams } from 'react-router-dom';
+// import styles from './Product.module.css';
+// import RatingTag from '../../RatingTag/RatingTag.tsx';
+// import FavoriteLink from '../../FavoriteLink/FavoriteLink.tsx';
+// import { useUserContext } from '../../../helpers/userContext.tsx';
+import { useLoaderData } from 'react-router-dom';
+import Title from '../../Title/Title';
 
 const Product = () => {
-	const {id} = useParams();
+	// const {id} = useParams();
+	const data = useLoaderData() as any;
 
-	const {filmsState} = useUserContext();
+	// const {filmsState} = useUserContext();
 	
-	const product = filmsState.find(el => el.id === Number(id));
-
+	// const product = filmsState.find(el => el.id === Number(id));
 	return (
 		<>
-			{ product ?
+			<Title>Продукт с ID={data.imdbId}</Title>
+			{/* { product ?
 				<div className={styles['product-page']}>
 					<div className={styles['product']}>
 						<div className={styles['product__header']}>
@@ -81,7 +85,7 @@ const Product = () => {
 					</div>
 				</div>
 				: 'Ничего нет'
-			}
+			} */}
 		</>
 	);
 };

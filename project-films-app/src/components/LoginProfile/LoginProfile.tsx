@@ -3,10 +3,12 @@ import Input from '../Input/Input.js';
 import Title from '../Title/Title.tsx';
 import styles from './LoginProfile.module.css';
 import { FormEvent, useState } from 'react';
-import { LoginProfileProps } from './LoginProfile.props.ts';
+// import { LoginProfileProps } from './LoginProfile.props.ts';
+import { useNavigate } from 'react-router-dom';
 
-const LoginProfile = ({onSubmit}: LoginProfileProps) => {
+const LoginProfile = () => {
 	const [userName, setUserName] = useState<string>('');
+	const navigate = useNavigate();
 
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		setUserName(e.target.value );
@@ -14,10 +16,9 @@ const LoginProfile = ({onSubmit}: LoginProfileProps) => {
 
 	const addUser = (e: FormEvent) => {
 		e.preventDefault();
-		if(onSubmit) {
-			onSubmit(userName);
-		}
+		localStorage.setItem('user', userName);
 		setUserName('');	
+		navigate('/');
 	};
 	
 	return (

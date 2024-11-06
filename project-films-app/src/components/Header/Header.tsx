@@ -4,6 +4,7 @@ import LinkCounter from '../LinkCounter/LinkCounter.js';
 import { useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
 import { useUserContext } from '../../helpers/userContext.tsx';
+import UserLogin from '../UserLogin/UserLogin.tsx';
 
 const Header = () => {
 	const { usersState, changeList } = useUserContext();
@@ -22,8 +23,7 @@ const Header = () => {
 					<nav className={styles['header__nav']}>
 						<NavigationLink path='/'>Поиск фильмов</NavigationLink>
 						<NavigationLink path='/favorites'>Мои фильмы<LinkCounter>2</LinkCounter></NavigationLink>
-						<NavigationLink path='/login'>Войти</NavigationLink>
-						{/* <UserLogin user={usersState} Logout={ResetLogin} /> */}
+						<UserLogin />
 					</nav>
 				</div>
 			</div>    

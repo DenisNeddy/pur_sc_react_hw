@@ -1,9 +1,9 @@
 export interface CardProps {
-    id?: number,
+    id?: string,
     img: string,
     title: string,
     rating: number,
-    favorite: boolean, 
+    favorite?: boolean, 
     onClick?: () => void
 }
 
