@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 
 import Title from '../../Title/Title';
 import styles from './Favorites.module.css';
@@ -10,11 +11,10 @@ const Favorites = () => {
 	const { filmsState} = useUserContext();
 	const [favoriteFilms, setFavoritesFilms] = useState<ListItem[]>([]);
 	const list = filmsState.slice(0, 2).map(el => ({...el, favorite: true}));
-	// const list = filmsState.filter(el => el.favorite === true);
 	
 	useEffect(() => {
 		setFavoritesFilms(list);	
-	}, [list]);
+	}, []);
 
 	return (
 		<div className={styles['favorites-page']}>
@@ -22,32 +22,17 @@ const Favorites = () => {
 			<div className={styles['favorites__list']}>
 
 				{
-					favoriteFilms.map(film => (
+					favoriteFilms.map(el => (
 						<Card 	
-							id={film.id}
-							key={film.id} 
-							title={film.title} 
-							rating={film.rating} 
-							img={film.img} 
-							favorite={film.favorite}
+							id={el['#IMDB_ID']}
+							key={el['#IMDB_ID']} 
+							title={el['#TITLE']} 
+							rating={el['#RANK']} 
+							img={el['#IMG_POSTER']} 	
 						/>
 					))
 				}
 			</div>
-			{/* 
-			<div className={styles['cards-list']}>
-				{filmsState.map(el => (
-					<Card 	
-						id={el.id}
-						key={el.id} 
-						title={el.title} 
-						rating={el.rating} 
-						img={el.img} 
-						favorite={el.favorite}
-						
-					/>
-				))} 
-			</div> */}
 		</div>
 	);
 };

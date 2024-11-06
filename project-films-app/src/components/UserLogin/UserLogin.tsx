@@ -1,25 +1,30 @@
-// import NavLink from '../../NavLink/NavLink';
 
-import { useEffect } from 'react';
-import NavLink from '../NavLink/NavigationLink.js';
+import { useEffect, useState } from 'react';
 import styles from './UserLogin.module.css';
-import { UserLoginProps } from './UserLogin.props.js';
+import NavigationLink from '../NavLink/NavigationLink';
+import { useNavigate } from 'react-router-dom';
 
-import { useUserContext } from '../../helpers/userContext.js';
-
-const UserLogin = ({user, Logout}:  UserLoginProps ) => {
-
-	const { usersState, changeList } = useUserContext();
+const UserLogin = () => {
+	const [name, setName] = useState<string>('');
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		changeList(usersState);
-	}, [usersState, changeList]);
+		const user = localStorage.getItem('user');
+		if(user) {
+			setName(user);
+		}
+	}, [name]);
+
+	const logout = () => {
+		localStorage.removeItem('user');
+		navigate('/auth');
+	};
 
 	return (
-		<div className={styles['login-user']}>
+		<div>
 			{
-				usersState[0]?.isLogined ? <div className={styles['login-user__login']}><p className={styles['login-user__user']}>{user[0]?.name} <img src="/user-icon.svg" /></p>  <button className={styles['login-user__logout']} onClick={Logout}> Выход </button></div> : <NavLink>Войти</NavLink>
-			}            
+				name.length > 0 ? <div className={styles['login-user__login']}><p className={styles['login-user__user']}>{name} <img src="/user-icon.svg" /></p>  <button className={styles['login-user__logout']} onClick={logout}> Выход </button></div> : <NavigationLink path="/auth">Войти</NavigationLink>
+			}
 		</div>
 	);
 };
