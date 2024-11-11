@@ -2,14 +2,27 @@ import { MouseEvent,  useState } from 'react';
 import styles from './FavoriteLink.module.css';
 import { FavoriteLinkProps } from './FavoriteLink.props';
 import cn from 'classnames';
+import { AppDispatch } from '../../store/store';
+import { useDispatch } from 'react-redux';
+import { favoriteActions } from '../../store/favorite.slice';
 
-const FavoriteLink = ({ className,   ...props}: FavoriteLinkProps) => {
+const FavoriteLink = ({ className, elementData, ...props}: FavoriteLinkProps) => {
 	const [fav, setFav] = useState<boolean>(false);
+
+	const dispatch = useDispatch<AppDispatch>();
 
 	const changeFavorite = (e:MouseEvent) =>  {
 		e.stopPropagation();
+
+		if(!fav) {
+			dispatch(favoriteActions.addFavoriteFilm(elementData));
+		} else {
+			dispatch(favoriteActions.removeFavoriteFilm(elementData));
+		}
 		setFav(fav => !fav);
+		console.log(elementData, 'бля');
 	};
+
 
 	return (
 		<button className={cn(styles['favorite-link'], className)} onClick={changeFavorite} {...props}>

@@ -72,6 +72,11 @@
 .product__data-table{
     border-spacing: 0px;
     border-collapse: collapse;
+
+  }
+
+  .product__data-content{
+   
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -79,6 +84,7 @@
     text-align: start;
     gap: 24px;
   }
+
 .product__data-table-row {
     display: flex;
     flex-direction: column;

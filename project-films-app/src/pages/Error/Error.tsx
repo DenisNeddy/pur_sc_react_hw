@@ -1,6 +1,6 @@
 
 
-import Paragraph from '../../Paragraph/Paragraph';
+import Paragraph from '../../components/Paragraph/Paragraph';
 import styles from './Error.module.css';
 import cn from 'classnames';
 const ErrorPage = () => {

@@ -1,10 +1,10 @@
-import Search from '../../Search/Search.tsx';
-import CardList from '../../CardsList/CardsList.tsx';
+import Search from '../../components/Search/Search.tsx';
+import CardList from '../../components/CardsList/CardsList.tsx';
 import styles from './Films.module.css';
 import { useState } from 'react';
 import axios, { AxiosError } from 'axios';
 
-import { useUserContext } from '../../../helpers/userContext.tsx';
+import { useUserContext } from '../../helpers/userContext.tsx';
 import Error from '../Error/Error.tsx';
 
 const Films = () => {
