@@ -1,15 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
-import userFavoriteSlice from './favorite.slice';
 import { saveState } from './storage';
+import userProfileSlice  from './user.slice';
 
 export const store = configureStore({
 	reducer: {
-		favorite: userFavoriteSlice
+		user: userProfileSlice
 	}
 });
 
 store.subscribe(() => {
-	saveState({name: 'Петя', favoriteFilms: store.getState().favorite.favoriteFilms}, 'userData');
+	saveState({name:  store.getState().user.profile.name, favoriteFilms: store.getState().user.profile.favorites}, 'userData');
 });
 
 export type RootState = ReturnType<typeof  store.getState>;

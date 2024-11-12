@@ -3,6 +3,7 @@
 import Paragraph from '../../components/Paragraph/Paragraph';
 import styles from './Error.module.css';
 import cn from 'classnames';
+
 const ErrorPage = () => {
 	return (
 		<div className={styles['error-page']}>		
@@ -11,7 +12,6 @@ const ErrorPage = () => {
 				<Paragraph size={20} className={styles['error-page__text']}>Попробуйте изменить запрос или ввести более точное название фильма</Paragraph>
 			</div>
 		</div>
-	
 	);
 };
 

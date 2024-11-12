@@ -19,26 +19,22 @@ export interface ListItem {
 
 const INITIAL_LIST: ListItem[] = [
 	{
-		
 		'#IMDB_ID': '1',
 		'#IMG_POSTER': 'image_black_widow.png', 
 		'#TITLE': 'Black Widow',
-		'#RANK': 324
-		
+		'#RANK': 324	
 	},
 	{   
 		'#IMDB_ID': '2',
 		'#IMG_POSTER': 'image_shang_chi.jpg', 
 		'#TITLE': 'Shang Chi',
 		'#RANK': 124
-		
 	},
 	{   
 		'#IMDB_ID': '3',
 		'#IMG_POSTER': 'image_loki.png', 
 		'#TITLE': 'Loki',
 		'#RANK': 235
-		
 	},
 	{   
 		'#IMDB_ID': '4',
@@ -61,7 +57,6 @@ export interface ListContextType {
 }
 
 export const UserContext = createContext<MyContextType | undefined>(undefined);
-// export const FilmsContext = createContext<ListContextType | undefined>(undefined);
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
 	const [usersState,setUsersState] = useState<UserProps[]>([]);

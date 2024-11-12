@@ -28,7 +28,6 @@
     letter-spacing: 0.04em;
 }
 
-
 .product__content {
     margin-top: 80px;
     display: grid;
@@ -46,7 +45,6 @@
 .product__picture img{
     width: auto;
     height: 100%;
-
 } 
 
 .product__data {
@@ -72,18 +70,16 @@
 .product__data-table{
     border-spacing: 0px;
     border-collapse: collapse;
-
   }
 
-  .product__data-content{
-   
+.product__data-content{
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
     text-align: start;
     gap: 24px;
-  }
+}
 
 .product__data-table-row {
     display: flex;
@@ -140,10 +136,10 @@
 
 .review__title {
     margin: 0;
- font-size: 20px;
- line-height: 32px;
- font-weight: 900;
- color: #C3C8D4;   
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 900;
+    color: #C3C8D4;   
 }
 
 .review__date {

@@ -1,40 +1,29 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-// import { useParams } from 'react-router-dom';
 import styles from './Product.module.css';
 import RatingTag from '../../components/RatingTag/RatingTag.tsx';
 import FavoriteLink from '../../components/FavoriteLink/FavoriteLink.tsx';
-// import { useUserContext } from '../../../helpers/userContext.tsx';
 import { useLoaderData } from 'react-router-dom';
 
 const Product = () => {
-	// const {id} = useParams();
 	const data = useLoaderData() as any;
-
 	function parseDuration(duration: string): number {
 		const regex = /^PT(?:(\d+)H)?(?:(\d+)M)?$/;
 		const matches = duration.match(regex);
-	
 		if (!matches) {
 			throw new Error('Invalid duration format');
 		}
-	
 		const hours = matches[1] ? parseInt(matches[1], 10) : 0;
 		const minutes = matches[2] ? parseInt(matches[2], 10) : 0;
-	
+
 		return hours * 60 + minutes;
 	}
-
-	const element =  {
+	const element = {
 		id: data.imdbId,
 		img: data.short.image,
 		title: data.short.name,
 		rating: data.short.aggregateRating.ratingCount
 	};
 
-	// const {filmsState} = useUserContext();
-	
-	// const product = filmsState.find(el => el.id === Number(id));
 	return (
 		<>
 			{ data ?

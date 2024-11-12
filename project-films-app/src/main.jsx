@@ -23,7 +23,6 @@ const router = createBrowserRouter([
 				path: '/',
 				errorElement: <Error />,
 				element: <Films />,
-	
 			},
 			{
 				path: '/favorites',
@@ -37,7 +36,6 @@ const router = createBrowserRouter([
 					const {data} = await axios.get(`https://search.imdbot.workers.dev/?tt=${params.id}`);
 					return data;
 				}
-			
 			},
 			{
 				path: '*',

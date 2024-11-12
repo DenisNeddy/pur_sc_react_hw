@@ -1,7 +1,7 @@
-// import { ListItem } from '../../context/user.context';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-// export interface CardListProps {
-//     films: [] | {}
-// }
+export interface CardListProps {
+    films:  any[]
+}
 
 

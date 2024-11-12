@@ -1,4 +1,4 @@
-import { LinkProps } from './Link.props';
+import {LinkProps} from './Link.props';
 import styles from './LinkCounter.module.css';
 
 const LinkCounter = ({children, className = ''}: LinkProps) => {

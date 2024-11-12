@@ -1,28 +1,23 @@
 import Button from '../Button/Button.tsx';
-import { CardProps } from '../Card/Card.props.ts';
 import Input from '../Input/Input.js';
 import Title from '../Title/Title.tsx';
 import styles from './LoginProfile.module.css';
 import { FormEvent, useState } from 'react';
-// import { LoginProfileProps } from './LoginProfile.props.ts';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../store/user.slice.ts';
 
 const LoginProfile = () => {
-	const [userData, setUserData] = useState<{name: string, favoriteFilms: CardProps[]}>({name: '', favoriteFilms: []});
 	const [userValue, setUserValue] = useState<string>('');
 	const navigate = useNavigate();
-
+	const dispatch = useDispatch();
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setUserValue(e.target.value);
-		setUserData(prevData => ({...prevData,name: e.target.value}));
-		
+		setUserValue(e.target.value);	
 	};
-
 	const addUser = (e: FormEvent) => {
 		e.preventDefault();
 		navigate('/');
-		localStorage.setItem('userData', JSON.stringify(userData));
-		console.log(userData);
+		dispatch(userActions.addUserName(userValue));
 		setUserValue('');	
 	};
 	
