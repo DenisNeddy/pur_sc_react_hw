@@ -8,7 +8,7 @@ export interface UserState {
 
 const initialState: UserState = {
 	profile: {
-		name: loadState('userData')?.name || 'ч',
+		name: loadState('userData')?.name || '',
 		favorites:  loadState('userData')?.favoriteFilms || []
 	}
 };

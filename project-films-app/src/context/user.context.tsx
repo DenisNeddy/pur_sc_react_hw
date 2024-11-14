@@ -5,11 +5,6 @@ export interface UserContextProviderProps {
 	children: ReactNode
 }
 
-export interface UserProps {
-	name: string,
-	isLogined: boolean,
-}
-
 export interface ListItem {
 	'#IMDB_ID': string,
 	'#IMG_POSTER': string,
@@ -45,9 +40,7 @@ const INITIAL_LIST: ListItem[] = [
 ];
 
 export interface MyContextType {
-	usersState: UserProps[],
-	addItem: (item: UserProps) => void,
-	changeList: (item: UserProps[]) => void,
+	
 	filmsState: ListItem[],
 	changeFilms: (item: ListItem[] | ListItem ) => void
 }
@@ -59,15 +52,7 @@ export interface ListContextType {
 export const UserContext = createContext<MyContextType | undefined>(undefined);
 
 export const UserContextProvider = ({children}: UserContextProviderProps) => {
-	const [usersState,setUsersState] = useState<UserProps[]>([]);
 	const [filmsState, setFilmsState] = useState<ListItem[]>(INITIAL_LIST);
-	const addItem = (item: UserProps) => {
-		setUsersState((prevItems) => [...prevItems, item]);
-	};
-	const changeList = (item: UserProps[]) => {
-		setUsersState(item);
-	};
-
 	const changeFilms = (item: ListItem | ListItem[]) => {
 		if(Array.isArray(item)) {
 			setFilmsState(item);
@@ -77,9 +62,11 @@ export const UserContextProvider = ({children}: UserContextProviderProps) => {
 	};
 
 	return (
-		<UserContext.Provider value={{ usersState, addItem, changeList, filmsState, changeFilms }}>
+		<UserContext.Provider value={{  filmsState, changeFilms }}>
 			{children}
 	    </UserContext.Provider>
+
+		
 		  );
 };
 

@@ -3,19 +3,16 @@ import NavigationLink from '../NavLink/NavigationLink.tsx';
 import LinkCounter from '../LinkCounter/LinkCounter.js';
 import {useEffect,useState} from 'react';
 import {NavLink} from 'react-router-dom';
-import {useUserContext} from '../../helpers/userContext.tsx';
 import UserLogin from '../UserLogin/UserLogin.tsx';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../store/store.ts';
 
 const Header = () => {
-	const { usersState, changeList } = useUserContext();	
 	const list = useSelector((s: RootState) => s.user.profile.favorites);
 	const [counter, setCounter] = useState<number>(0);
 	useEffect(() => {
-		changeList(usersState);	
 		setCounter(list.length);
-	}, [list,counter,usersState,changeList]);
+	}, [list,counter]);
 
 	return (
 		<section className={styles['header']}>
