@@ -6,11 +6,13 @@ export interface UserState {
     profile: Profile
 }
 
+const profileInitial: Profile = {
+	name: loadState('userData')?.name || '',
+	favorites:  loadState('userData')?.favoriteFilms || []
+};
+
 const initialState: UserState = {
-	profile: {
-		name: loadState('userData')?.name || '',
-		favorites:  loadState('userData')?.favoriteFilms || []
-	}
+	profile: profileInitial
 };
 
 export const userProfileSlice = createSlice({

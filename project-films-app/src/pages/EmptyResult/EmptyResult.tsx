@@ -1,10 +1,10 @@
 
 
 import Paragraph from '../../components/Paragraph/Paragraph';
-import styles from './Error.module.css';
+import styles from './EmptyResult.module.css';
 import cn from 'classnames';
 
-const ErrorPage = () => {
+const EmptyResult = () => {
 	return (
 		<div className={styles['error-page']}>		
 			<div className={styles['error-page__content']}>
@@ -15,4 +15,4 @@ const ErrorPage = () => {
 	);
 };
 
-export default ErrorPage;
+export default EmptyResult;
