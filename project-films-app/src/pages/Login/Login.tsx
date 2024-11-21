@@ -1,6 +1,5 @@
-import LoginProfile from '../../LoginProfile/LoginProfile';
+import LoginProfile from '../../components/LoginProfile/LoginProfile';
 import styles from './Login.module.css';
-
 
 const Login = () => {
 	return (

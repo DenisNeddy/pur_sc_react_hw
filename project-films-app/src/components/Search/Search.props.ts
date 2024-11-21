@@ -2,5 +2,5 @@ import { InputHTMLAttributes } from 'react';
 
 export interface SearchProps extends InputHTMLAttributes<HTMLInputElement> {
     isValid?: boolean,
-    sFilms: (name: string) => void
+    searchFilms: (name: string) => void
 }

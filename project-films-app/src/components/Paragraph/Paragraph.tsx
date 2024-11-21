@@ -1,5 +1,5 @@
 import styles from './Paragraph.module.css';
-import { ParagraphProps } from './Paragraph.props';
+import {ParagraphProps} from './Paragraph.props';
 import cn from 'classnames';
 
 const Paragraph = ({className, size = 16,children}: ParagraphProps) => {

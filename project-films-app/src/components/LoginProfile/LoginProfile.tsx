@@ -3,29 +3,29 @@ import Input from '../Input/Input.js';
 import Title from '../Title/Title.tsx';
 import styles from './LoginProfile.module.css';
 import { FormEvent, useState } from 'react';
-// import { LoginProfileProps } from './LoginProfile.props.ts';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../store/user.slice.ts';
 
 const LoginProfile = () => {
-	const [userName, setUserName] = useState<string>('');
+	const [userValue, setUserValue] = useState<string>('');
 	const navigate = useNavigate();
-
+	const dispatch = useDispatch();
 	const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		setUserName(e.target.value );
+		setUserValue(e.target.value);	
 	};
-
 	const addUser = (e: FormEvent) => {
 		e.preventDefault();
-		localStorage.setItem('user', userName);
-		setUserName('');	
 		navigate('/');
+		dispatch(userActions.addUserName(userValue));
+		setUserValue('');	
 	};
 	
 	return (
 		<div  className={styles['login-profile']}>
 			<Title>Вход</Title>
 			<form  className={styles['login-profile__form']} onSubmit={addUser}>
-				<Input value={userName} onChange={onChange} placeholder="Ваше имя" />
+				<Input value={userValue} onChange={onChange} placeholder="Ваше имя" />
 				<Button>Войти в профиль</Button>
 			</form>
 		</div>

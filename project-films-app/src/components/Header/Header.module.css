@@ -1,7 +1,6 @@
 .header {
-        background-color: rgba(18, 24, 41, 0.8);
-        /* background-color: red; */
-        padding: 20px 0;
+    background-color: rgba(18, 24, 41, 0.8);
+    padding: 20px 0;
 }
 
 .header__wrapper {
@@ -14,3 +13,11 @@
     display: flex;
     gap: 16px;
 }
+
+.header__favorites {
+    position: relative;
+}
+
+.header__favorites > div {
+    position: apsolute;
+} 

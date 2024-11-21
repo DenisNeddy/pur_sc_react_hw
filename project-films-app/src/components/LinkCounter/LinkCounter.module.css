@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding:  8px 10px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     background-color: #7B6EF6;
     font-size: 14px;
-    line-height: 14px;
+    line-height: 0;
     color: #ffffff;
+    box-sizing: border-box;
 }

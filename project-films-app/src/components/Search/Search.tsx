@@ -3,33 +3,19 @@ import Input from '../Input/Input.js';
 import Paragraph from '../Paragraph/Paragraph.js';
 import Title from '../Title/Title.js';
 import styles from './Search.module.css';
-import { FormEvent,  useState } from 'react';
-import { SearchProps } from './Search.props.ts';
-// import { useEffect } from 'react';
+import {FormEvent,useState} from 'react';
+import {SearchProps} from './Search.props.ts';
 
-
-const Search = ({sFilms}: SearchProps) => {
+const Search = ({searchFilms}: SearchProps) => {
 	const icon = '/icon_search.svg';
 	const [query, setQuery] = useState('');
-	// const [isSubmit, setIsSubmit] = useState<boolean>(false);
-
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault();
 		if(query) {
-
-			sFilms(query);
-			// setIsSubmit(true);
+			searchFilms(query);
 			setQuery('');
 		}
-		console.log(query, 'Запрос');
-
 	};
-
-	// useEffect(() => {
-	// 	if(isSubmit) {
-	// 		setQuery('');
-	// 	}
-	// }, [query, isSubmit]);
 
 	return (
 		<div className={styles['search']}>

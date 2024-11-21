@@ -1,9 +1,10 @@
 
 
-import Paragraph from '../../Paragraph/Paragraph';
-import styles from './Error.module.css';
+import Paragraph from '../../components/Paragraph/Paragraph';
+import styles from './EmptyResult.module.css';
 import cn from 'classnames';
-const ErrorPage = () => {
+
+const EmptyResult = () => {
 	return (
 		<div className={styles['error-page']}>		
 			<div className={styles['error-page__content']}>
@@ -11,8 +12,7 @@ const ErrorPage = () => {
 				<Paragraph size={20} className={styles['error-page__text']}>Попробуйте изменить запрос или ввести более точное название фильма</Paragraph>
 			</div>
 		</div>
-	
 	);
 };
 
-export default ErrorPage;
+export default EmptyResult;

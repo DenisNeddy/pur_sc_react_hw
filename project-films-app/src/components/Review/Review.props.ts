@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-export interface CardListProps {
-    films:  any[]
+export interface ReviewProps {
+    data: any
 }
-
-
